@@ -1,0 +1,52 @@
+Last login: Thu Sep  5 11:41:36 on ttys000
+1045455@1045455-student-HXJKFBVL265D ~ % date
+Thu Sep  5 11:48:46 EDT 2024
+1045455@1045455-student-HXJKFBVL265D ~ % ls       
+#lists,tuples, sets, dictionary.py	Documents				Movies					Pictures				srb2
+Applications				Downloads				Music					Public
+Desktop					Library					Pearson					nums = [1,2,3].py
+1045455@1045455-student-HXJKFBVL265D ~ % cd downloads
+1045455@1045455-student-HXJKFBVL265D downloads % ls
+1706050759.878039.jpg							button_resume.png
+2021-09-17T15_30_42.960Z.jpg						cdls_quiz
+32x32-bat-sprite.png							cdls_quiz.zip
+APS Summer School 2024_ New Work Options (Wakefield) (1).pdf		comment_flask_complete
+APS Summer School 2024_ New Work Options (Wakefield) (2).pdf		comment_flask_complete.zip
+APS Summer School 2024_ New Work Options (Wakefield) (3).pdf		comment_flask_plus_users
+APS Summer School 2024_ New Work Options (Wakefield).pdf		comment_flask_plus_users.zip
+BVKER - The Astro Hip Hop Drum Kit					dvd.py
+BVKER-The-Astro-Hip-Hop-Drum-Kit.zip					ezgif-5-89902869b7-png-32x32-sprite-png
+CCResourceNight.jpeg							ezgif-5-89902869b7-png-32x32-sprite-png.zip
+Checking TestNav on APS Macbooks.pdf					ezgif-6-8c4c8336e4-png-80x80-sprite-png
+Co_and_incomplete Dom WS.doc						ezgif-6-8c4c8336e4-png-80x80-sprite-png.zip
+Comparing Bacteria (1).docx						ezgif-7-d6bf1f9ce4-png-80x80-sprite-png.zip
+Comparing Bacteria.docx							file_io_practice.zip
+Copy of SSR Log - Q4 - 1 Days-2.docx					flask_starter_code.zip
+NOT buying a snack from Equal Club after school-1.png			flstudio_mac_21.2.2.3470.dmg
+Perdido en Madrid-Ser vs Estar.pdf					galactic bat dodge.zip
+REGULAR Bell Schedule.pdf						genocide dbq.docx
+Resume.pdf								images.jpeg
+SP 2 L5 Vocab Activities.pdf						jpg2png.zip
+School_ER_Diagram (1).jpg						last-guardian-sprites
+School_ER_Diagram (2).jpg						last-guardian-sprites.zip
+School_ER_Diagram.jpg							mixkit-arcade-fast-game-over-233.wav
+Screen Shot 2024-02-04 at 5.57.00 PM.png				parallax_mountain_pack.zip
+UltimatePygameIntro-main						rickandmorty.ipynb
+UltimatePygameIntro-main.zip						sample_flask_CRUD_app.zip
+Visual Studio Code.app							spaceship.png
+WHS Rising 1012 CRF Jan 2024.pdf					spaceship3-20240423-125715.piskel
+WakefieldSummer2024SocialMediaJournalismBootCampFlyerFIXEDpdf.jpg	spaceship3.png
+Worksheet_-_DNA_Strucuture_and_Replication.doc				spanish presantation.pptx
+_SSR Log - Q4 - 5th PD.docx						start_btn-20240528-093242.piskel
+button.py								start_btn.png
+button_back.png								~$py of Chunked Unit 1 Vocab practice Quiz.docx
+button_quit.png
+1045455@1045455-student-HXJKFBVL265D downloads % cd cdls_quiz
+1045455@1045455-student-HXJKFBVL265D cdls_quiz % cd a
+1045455@1045455-student-HXJKFBVL265D a % ls
+1.txt	2.txt	3.txt	4.txt
+1045455@1045455-student-HXJKFBVL265D a % file A has the most because I cant figure out how to go back :)
+zsh: parse error near `)'
+1045455@1045455-student-HXJKFBVL265D a % 
+
+
