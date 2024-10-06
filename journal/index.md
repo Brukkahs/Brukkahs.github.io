@@ -5,4 +5,4 @@ in this journal I will write about:
 - things that can help me in the future
 
 # journal entries
--  [My journey learning the terminal](terminal.md)
+-  [ learning the terminal](entries/terminal.md)
