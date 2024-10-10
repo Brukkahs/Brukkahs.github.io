@@ -11,5 +11,7 @@ last class in Algebra 2 we learned radiacal functions. radical functions are fun
 | 0 | 0    |
 | 1 | 1    | 
 | 4 | 2    | 
-| 9 | 3    |  
+| 9 | 3    |
+
+y = \sqrt{x}  
 
