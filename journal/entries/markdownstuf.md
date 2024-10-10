@@ -23,3 +23,10 @@ dashes and stars
 [this is the text that is a link](www.example.com)
 ![this is one for an image](https://static-00.iconduck.com/assets.00/thumbs-up-emoji-emoji-1828x2048-3iipr9gp.png)
 
+## my favorite cartoon cats
+
+|Name     |        facts |
+| ------  | ------------ |
+|Garfield |likes lasagna |
+|tom      | chases jerry |
+|meowth
