@@ -6,12 +6,15 @@ last class in Algebra 2 we learned radiacal functions. radical functions are fun
 
 ## parent function 
 
-| x | $f(x)$ |   
+| $x$ | $f(x)$ |   
 |---|--------|
 | 0 | 0      |
 | 1 | 1      | 
 | 4 | 2      | 
 | 9 | 3      |
 
-y =$ \sqrt{x}$  
+$$y =$\sqrt{x}$$
+
+![this is what the function looks like on a grap](https://www.varsitytutors.com/assets/vt-hotmath-legacy/hotmath_help/topics/graphing-square-root-functions/graph-1.gif)  
+
 
