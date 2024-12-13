@@ -1,5 +1,7 @@
 body, p{ 
 	background: #5585b5; 
+	font-family:"Helvetica","Arial";
+	font-size:20px;
 }
 	
 table{ 
@@ -8,6 +10,8 @@ table{
 
 header, #header2 { 
 	background: #79c2d0; 
+	font-family:"Georgia","Arial";
+        font-size:20px;
 }
 
 .time { 
