@@ -1,13 +1,36 @@
-body { 
-	background-color:"lightblue";
+body {
+	 
 	
-	
+	background-color: lightblue ;
 }
 
 .write {
-	font:"Helvetica"
+	font:"Roboto";
 }
 
 #quote {
-	font: "Arial"
+	background-color:#40E0D0 ;
+	font: "Arial";
+	border: 2px solid black;
+  	padding: 30px;
 	}
+
+.recipe{
+	display: grid;
+  grid-template-rows: 1fr 1fr;
+	}  
+
+.link{
+	
+	background-color:#B0BBFF ;
+        border: 3px solid black;
+        padding:30px;
+	font-size: 25px;
+	margin:10px;	
+	}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
