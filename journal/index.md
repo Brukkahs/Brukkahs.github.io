@@ -8,3 +8,5 @@ in this journal I will write about:
 -  [learning the terminal](entries/terminal.md)
 -  [algerbra 2 notes](entries/math.md) 
 -  [wordpress website](entries/wordpress.md)
+-  [wikipedia stylus](entries/stylus.md)
+

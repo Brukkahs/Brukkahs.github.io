@@ -4,4 +4,4 @@
 
 -  [here is a link to the code](stylus.css)
 
-![picture of what it looks like](wiki)
+![picture of what it looks like](file.jpg)
