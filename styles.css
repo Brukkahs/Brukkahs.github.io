@@ -1,6 +1,6 @@
 body {
         font-family: "Arial", sans-serif;
-        background-color: #f4f4f4;
+        background-color:   #b9936c;
 
 }
 
@@ -9,9 +9,9 @@ body {
 
 justify-content: center;
 align-items: center;
-background: #e6e2d3;
-padding: 5vw 5vw;
-font-size:25px;
+background:  #c4b7a6;
+padding: 6vw 6vh;
+font-size:5vw;
 text-align:center;
 
 
@@ -44,6 +44,8 @@ img {
 }
 
 .title{
+
+
     display: block;
     font-size: 32px;
     font-weight: bold;
@@ -51,7 +53,7 @@ img {
     color: #333;
     margin-bottom: 20px;
     text-transform: uppercase;
-    background-color: #f4f4f4;
+    background-color:  #b9936c;
     padding: 15px;
 
 }
