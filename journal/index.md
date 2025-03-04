@@ -9,4 +9,4 @@ in this journal I will write about:
 -  [algerbra 2 notes](entries/math.md) 
 -  [wordpress website](entries/wordpress.md)
 -  [wikipedia stylus](entries/stylus.md)
-
+-  [off the pike website](entries/off_the_pike.md)
