@@ -57,3 +57,11 @@ img {
     padding: 15px;
 
 }
+
+.spin{
+	transition: transform 0.5s;
+}
+
+#spin:hover {
+	transform: rotate(180deg);
+}
