@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <title>self portrait</title>
+</head>
+<body>
+    <canvas id="portrait" width="1000" height="10000"></canvas>
+    <script>
+        const canvas = document.getElementById('portrait');
+        const ctx = canvas.getContext('2d');
+
+        ctx.beginPath();
+        ctx.arc(150, 150, 50, 0, Math.PI * 2);
+        ctx.fillStyle = '#ff03de'; 
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(135, 140, 5, 0, Math.PI * 2);
+        ctx.fillStyle = '#000';
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(165, 140, 5, 0, Math.PI * 2);
+        ctx.fillStyle = '#000';
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(150, 160, 20, 0, Math.PI);
+        ctx.stroke();
+    </script>
+</body>
+</html>
+
