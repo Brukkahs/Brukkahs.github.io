@@ -10,9 +10,9 @@ function drawCircle(x,y){
 }
 
 drawCircle(100,100);
+drawCircle(150,150);
 drawCircle(200,200);
+drawCircle(250,250);
 drawCircle(300,300);
-drawCircle(400,400);
-drawCircle(500,500);
-drawCircle(600,600);
+drawCircle(350,350);
 
