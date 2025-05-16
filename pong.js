@@ -1,14 +1,86 @@
-const canvas = document.getElementById("myCanvas5");
-    const ctx = canvas.getContext("2d");
+const canvas = document.getElementById("pong");
+const ctx = canvas.getContext("2d");
+
+let x = 0;
+let dx = 5;
+let y = 0;
+let dy =1; 
+
+const player = {
+    x : 20,
+    y : 20,
+    color: 'blue',
+    speed: 3
+};
+
+const keys = {};
+
+const ball = {
+      x: 350,
+      y: 300,
+      radius: 15,
+      color: 'white',
+      dx: 4,
+      dy: 4,
+
+};
+function drawBall(x,y,r) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = ball.color;
+    ctx.arc(x,y,r,0,2*Math.PI);
+    ctx.fill();
+};
+
+function drawPlayer(){
+    ctx.fillStyle = player.color;
+    ctx.beginPath();
+    ctx.fillRect(player.x,player.y,10,80);
+    ctx.fill();
+};
+
+function movePlayer(){
+    if(keys['ArrowDown']){
+        player.y += player.speed;
+    }
+    if(keys['ArrowUp']){
+        player.y -= player.speed;
+    }
+};
 
 
-ctx.fillStyle = 'black';
-ctx.fillRect(0, 0, canvas.width, canvas.height);
+function animate() {
+    drawBall(ball.x,ball.y,ball.r);
+    movePlayer();
+    drawPlayer();
 
- ctx.beginPath();
-     ctx.rect(30, 30, 20, 100);
-     ctx.rect(650, 500, 20, 100);
-     ctx.arc(420, 400, 15, 0, 2 * Math.PI);
-     ctx.fillStyle = 'white';
-     ctx.fill();
-     ctx.closePath(); 
+    x = x + dx;
+    y = y + dy;
+
+    if(x > 600){
+        dx = dx * -1;
+    }
+    if(x < 0){
+        dx = dx * -1;
+    }
+
+    if(y > 480){
+        dy = dy * -1;
+    }
+    if(y < 0){
+        dy = dy * -1;
+    }
+
+    requestAnimationFrame(animate);
+};
+
+function handleKeyPress(e){
+    keys[e.key] = true;
+};
+
+
+document.addEventListener('keydown', handleKeyPress);
+
+document.addEventListener('keyup', (e) => {
+    keys[e.key] = false;
+});
+animate();
