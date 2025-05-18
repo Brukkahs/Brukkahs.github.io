@@ -16,9 +16,9 @@ const player = {
 const keys = {};
 
 const ball = {
-      x: 350,
-      y: 300,
-      radius: 15,
+      x: canvas.width/2,
+      y: canvas.height/2,
+      r: 15,
       color: 'white',
       dx: 4,
       dy: 4,
@@ -27,7 +27,7 @@ const ball = {
 function drawBall(x,y,r) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = ball.color;
-    ctx.arc(x,y,r,0,2*Math.PI);
+    ctx.arc(ball.x,ball.y,ball.r,0,2*Math.PI);
     ctx.fill();
 };
 
@@ -49,25 +49,26 @@ function movePlayer(){
 
 
 function animate() {
-    drawBall(ball.x,ball.y,ball.r);
+    drawBall();
     movePlayer();
     drawPlayer();
 
-    x = x + dx;
-    y = y + dy;
+   ball.x += ball.dx;
+   ball.y += ball.dy;
 
-    if(x > 600){
-        dx = dx * -1;
+
+    if(ball.x > 600){
+        ball.dx = ball.dx * -1;
     }
-    if(x < 0){
-        dx = dx * -1;
+    if(ball.x < 0){
+        ball.dx = ball.dx * -1;
     }
 
-    if(y > 480){
-        dy = dy * -1;
+    if(ball.y > 480){
+        ball.dy = ball.dy * -1;
     }
-    if(y < 0){
-        dy = dy * -1;
+    if(ball.y < 0){
+        ball.dy = ball.dy * -1;
     }
 
     requestAnimationFrame(animate);
@@ -77,6 +78,11 @@ function handleKeyPress(e){
     keys[e.key] = true;
 };
 
+function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawRect(player, "#fff");
+      drawBall(bal);
+    }
 
 document.addEventListener('keydown', handleKeyPress);
 
@@ -84,3 +90,4 @@ document.addEventListener('keyup', (e) => {
     keys[e.key] = false;
 });
 animate();
+draw();
