@@ -1,93 +1,103 @@
 const canvas = document.getElementById("pong");
 const ctx = canvas.getContext("2d");
 
-let x = 0;
-let dx = 5;
-let y = 0;
-let dy =1; 
-
-const player = {
-    x : 20,
-    y : 20,
-    color: 'blue',
-    speed: 3
-};
-
 const keys = {};
 
+const player1 = {
+    x: 20,
+    y: 150,
+    width: 10,
+    height: 80,
+    color: 'white',
+    speed: 5
+};
+
+const player2 = {
+    x: 570,
+    y: 150,
+    width: 10,
+    height: 80,
+    color: 'white',
+    speed: 5
+};
+
 const ball = {
-      x: canvas.width/2,
-      y: canvas.height/2,
-      r: 15,
-      color: 'white',
-      dx: 4,
-      dy: 4,
-
-};
-function drawBall(x,y,r) {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = ball.color;
-    ctx.arc(ball.x,ball.y,ball.r,0,2*Math.PI);
-    ctx.fill();
+    x: canvas.width / 2,
+    y: canvas.height / 2,
+    radius: 10,
+    color: 'white',
+    dx: 4,
+    dy: 4
 };
 
-function drawPlayer(){
-    ctx.fillStyle = player.color;
+function drawRect(p) {
+    ctx.fillStyle = p.color;
+    ctx.fillRect(p.x, p.y, p.width, p.height);
+}
+
+function drawBall() {
     ctx.beginPath();
-    ctx.fillRect(player.x,player.y,10,80);
+    ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+    ctx.fillStyle = ball.color;
     ctx.fill();
-};
+    ctx.closePath();
+}
 
-function movePlayer(){
-    if(keys['ArrowDown']){
-        player.y += player.speed;
-    }
-    if(keys['ArrowUp']){
-        player.y -= player.speed;
-    }
-};
+function movePlayers() {
+    if (keys['w'] && player1.y > 0) player1.y -= player1.speed;
+    if (keys['s'] && player1.y + player1.height < canvas.height) player1.y += player1.speed;
 
+    if (keys['ArrowUp'] && player2.y > 0) player2.y -= player2.speed;
+    if (keys['ArrowDown'] && player2.y + player2.height < canvas.height) player2.y += player2.speed;
+}
+
+function moveBall() {
+    ball.x += ball.dx;
+    ball.y += ball.dy;
+
+    if (ball.y - 10 < 0 || ball.y + 10 > canvas.height) {
+        ball.dy *= -1;
+    }
+
+    if (
+        ball.x - 10 <= player1.x + player1.width && 
+        ball.y >= player1.y &&
+        ball.y <= player1.y + player1.height
+    ) {
+        ball.dx *= -1;
+        ball.x = player1.x + player1.width + 10;
+    }
+
+    if (
+        ball.x + ball.radius >= player2.x &&
+        ball.y >= player2.y &&
+        ball.y <= player2.y + player2.height
+    ) {
+        ball.dx *= -1;
+        ball.x = player2.x - 10;
+    }
+
+    if (ball.x + 10 < 0 || ball.x - 10 > canvas.width) {
+    ball.x = canvas.width / 2;
+    ball.y = canvas.height / 2;
+    ball.dx *= -1; 
+}
+
+}
 
 function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    movePlayers();
+    moveBall();
+    drawRect(player1);
+    drawRect(player2);
     drawBall();
-    movePlayer();
-    drawPlayer();
-
-   ball.x += ball.dx;
-   ball.y += ball.dy;
-
-
-    if(ball.x > 600){
-        ball.dx = ball.dx * -1;
-    }
-    if(ball.x < 0){
-        ball.dx = ball.dx * -1;
-    }
-
-    if(ball.y > 480){
-        ball.dy = ball.dy * -1;
-    }
-    if(ball.y < 0){
-        ball.dy = ball.dy * -1;
-    }
-
     requestAnimationFrame(animate);
-};
+}
 
-function handleKeyPress(e){
-    keys[e.key] = true;
-};
+document.addEventListener('keydown', e => keys[e.key] = true);
+document.addEventListener('keyup', e => keys[e.key] = false);
 
-function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      drawRect(player, "#fff");
-      drawBall(bal);
-    }
-
-document.addEventListener('keydown', handleKeyPress);
-
-document.addEventListener('keyup', (e) => {
-    keys[e.key] = false;
-});
 animate();
-draw();
+
+
