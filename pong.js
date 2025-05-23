@@ -3,6 +3,13 @@ const ctx = canvas.getContext("2d");
 
 const keys = {};
 
+let gameOver = false;
+
+let score1 = 0;
+let score2 = 0;
+let winner = "";
+
+
 const player1 = {
     x: 20,
     y: 150,
@@ -43,6 +50,27 @@ function drawBall() {
     ctx.closePath();
 }
 
+function drawScore() {
+    ctx.font = "20px arial";
+    ctx.fillStyle = "white";
+    ctx.fillText(`Player 1: ${score1}`, 50, 30);   
+    ctx.fillText(`Player 2: ${score2}`, 400, 30);    
+}
+
+function GameOver() {
+    ctx.font = "40px arial ";
+    ctx.fillStyle = "white";
+    if (score1 === 7) {
+	winner = "player 1"
+	}
+    else if (score2 === 7){
+	winner = "player 2"
+	}
+    ctx.fillText(`${winner} Wins!`, 180, 300)
+	
+}
+
+
 function movePlayers() {
     if (keys['w'] && player1.y > 0) player1.y -= player1.speed;
     if (keys['s'] && player1.y + player1.height < canvas.height) player1.y += player1.speed;
@@ -64,7 +92,9 @@ function moveBall() {
         ball.y >= player1.y &&
         ball.y <= player1.y + player1.height
     ) {
-        ball.dx *= -1;
+        ball.dx *= -1.05;
+	ball.dy *= 1.05;
+	ball.dy += (Math.random()-0.5 )* 2
         ball.x = player1.x + player1.width + 10;
     }
 
@@ -73,25 +103,54 @@ function moveBall() {
         ball.y >= player2.y &&
         ball.y <= player2.y + player2.height
     ) {
-        ball.dx *= -1;
+        ball.dx *= -1.05;
+	ball.dy *= 1.05;
+	ball.dy += (Math.random()-0.5 )* 2
         ball.x = player2.x - 10;
     }
 
-    if (ball.x + 10 < 0 || ball.x - 10 > canvas.width) {
-    ball.x = canvas.width / 2;
-    ball.y = canvas.height / 2;
-    ball.dx *= -1; 
-}
+ if (ball.x + ball.radius < 0) {
+        score2++;
+        if (score2 === 7) {
+            gameOver = true;
+        }
+
+        ball.x = canvas.width / 2;
+        ball.y = canvas.height / 2;
+        ball.dx = 4;  
+        ball.dy = 4;
+    }
+
+    if (ball.x - ball.radius > canvas.width) {
+        score1++;
+        if (score1 === 7) {
+            gameOver = true;
+        }
+
+        ball.x = canvas.width / 2;
+        ball.y = canvas.height / 2;
+        ball.dx = -4; 
+        ball.dy = 4;
+    }
+
+
 
 }
 
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawScore();
+    
+    if (gameOver === false){
     movePlayers();
     moveBall();
     drawRect(player1);
     drawRect(player2);
     drawBall();
+      }
+    if (gameOver === true){
+    GameOver();
+      }
     requestAnimationFrame(animate);
 }
 
