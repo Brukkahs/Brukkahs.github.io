@@ -4,7 +4,7 @@ const ctx = canvas.getContext("2d");
 const keys = {};
 
 let gameOver = false;
-
+let gameStarted = false;
 let score1 = 0;
 let score2 = 0;
 let winner = "";
@@ -12,7 +12,7 @@ let winner = "";
 
 const player1 = {
     x: 20,
-    y: 150,
+    y: 200,
     width: 10,
     height: 80,
     color: 'white',
@@ -21,7 +21,7 @@ const player1 = {
 
 const player2 = {
     x: 570,
-    y: 150,
+    y: 200,
     width: 10,
     height: 80,
     color: 'white',
@@ -70,6 +70,15 @@ function GameOver() {
 	
 }
 
+function StartScreen() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.font = "80px Arial";
+    ctx.fillStyle = "white";
+    ctx.fillText("PONG", 160, 210);
+    ctx.font = "40px Arial";
+    ctx.fillText("Press SPACE to Start", 100, 250);
+}
+
 
 function movePlayers() {
     if (keys['w'] && player1.y > 0) player1.y -= player1.speed;
@@ -77,6 +86,12 @@ function movePlayers() {
 
     if (keys['ArrowUp'] && player2.y > 0) player2.y -= player2.speed;
     if (keys['ArrowDown'] && player2.y + player2.height < canvas.height) player2.y += player2.speed;
+}
+
+function startGame() {
+	if (keys[' ']) gameStarted = true;
+
+
 }
 
 function moveBall() {
@@ -140,7 +155,13 @@ function moveBall() {
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawScore();
-    
+    startGame();
+    if (gameStarted === false){
+	StartScreen();
+	requestAnimationFrame(animate);
+	
+	}
+    if (gameStarted === true){
     if (gameOver === false){
     movePlayers();
     moveBall();
@@ -152,6 +173,7 @@ function animate() {
     GameOver();
       }
     requestAnimationFrame(animate);
+	}
 }
 
 document.addEventListener('keydown', e => keys[e.key] = true);
