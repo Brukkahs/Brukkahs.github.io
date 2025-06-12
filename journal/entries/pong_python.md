@@ -7,15 +7,15 @@
 ## controls 
 - P1 will use 'w' and 's' to move up and down P2 will use 'arrow up' and 'arrow down' to move up and down
 - space bar pauses the game
-## the process 
- 
+## what I learned 
+
 I had already made a pong game on javascript and my project was to make the python version of that. 
 
-### what i learned 
 - at first I was going to use pictures as the paddles and ball but i looked it up and there was a way to draw just like in JS
 - Java script and python(with pygame) are very similar
 
 ## how to download
 - download the file 
 - download pygame by running this on the command line "pip install pygame"
-- [here is a link to where you can download the game](https://github.com/Brukkahs/Brukkahs.github.io/blob/main/pong.js)
+- [here is a link to where you can download the file](https://brukkahs.github.io/pong.py)
+- open this file on any IDE and run it
